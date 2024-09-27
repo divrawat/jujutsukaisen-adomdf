@@ -1,9 +1,12 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { DOMAIN, DOMAIN_NAME } from "@/config";
 
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <link rel="icon" href={`${DOMAIN}/favicon.ico`} sizes="any" />
+      </Head>
       <body>
         <Main />
         <NextScript />
