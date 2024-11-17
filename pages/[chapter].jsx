@@ -120,7 +120,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     "@id": `${DOMAIN}/${URL}/#primaryimage`
                 },
                 "thumbnailUrl": `${IMAGES_SUBDOMAIN}/chapter-${chapterNumber}/1.webp`,
-                "description": `Read ${MANGA_NAME} (JJK) manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
+                "description": `Read ${MANGA_NAME} (JJK) manga Online which is the best website for reading manga online in very high quality.`,
                 "breadcrumb": {
                     "@id": `${DOMAIN}/${URL}/#breadcrumb`
                 },
@@ -163,7 +163,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                 "@id": `${DOMAIN}/#website`,
                 "url": `${DOMAIN}`,
                 "name": "My Manga Blog",
-                "description": `Read ${MANGA_NAME} (JJK) manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
+                "description": `Read ${MANGA_NAME} (JJK) manga Online at which is the best website for reading manga online in very high quality.`,
                 "publisher": {
                     "@id": `${DOMAIN}/#organization`
                 },
