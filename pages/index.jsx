@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { DOMAIN, MANGA_NAME, MANGA_DESCRIPTION, MANGA_AUTHOR, MANGA_RELEASE, MANGA_STATUS, MANGA_ARTIST, MANGA_STUDIO, MANGA_GENRE, APP_DESCRIPTION, APP_NAME, MANGA_SUMMARY, COVER_IMG, AUTHOR_PAGE, LOGO_URL, URL_PREFIX, chaptersData, BEHIND_COVER_IMG, RelatedMangaLinks, DOMAIN_NAME, MANGA_TYPE, HEADER_MANGA_DESC, last5chapters } from "@/config";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
 
 export default function Home() {
 
@@ -37,7 +39,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${DOMAIN}`,
         "url": `${DOMAIN}`,
-        "name": "Read the legendary jujutsu kaisen manhwa",
+        "name": "Read the legendary jujutsu kaisen JJK manhwa",
         "isPartOf": {
           "@id": `${DOMAIN}/#website`
         },
@@ -53,7 +55,7 @@ export default function Home() {
         "thumbnailUrl": `${COVER_IMG}`,
         // "datePublished": "2019-05-24T22:29:53+00:00",
         // "dateModified": "2024-01-13T01:17:47+00:00",
-        "description": "jujutsu kaisen manga or manhwa follows the story of Jinwoo Sung, a weak and low-ranked hunter in a world where hunters battle monsters from mysterious gates. After a near-death experience in a dungeon, he gains the ability to level up and grow stronger, which no other hunter can do. With this power, he transforms from the weakest hunter into one of the most powerful, facing increasingly dangerous enemies while uncovering the mysteries behind the gates and the system that grants him his abilities.",
+        "description": "Yuji Itadori, a high school student with extraordinary physical abilities. He becomes involved in the world of jujutsu sorcerers after consuming the finger of a powerful cursed spirit. Yuji must now navigate the dangerous world of cursed spirits and jujutsu sorcerers, learning to control his newfound powers while protecting those he cares about.",
         "breadcrumb": {
           "@id": `${DOMAIN}/#breadcrumb`
         },
@@ -88,7 +90,7 @@ export default function Home() {
         "@id": `${DOMAIN}/#website`,
         "url": `${DOMAIN}`,
         "name": `${MANGA_NAME} ${MANGA_TYPE} Online`,
-        "description": `Read ${MANGA_NAME} ${MANGA_TYPE} Online in a very High Quality`,
+        "description": `Read ${MANGA_NAME} ${MANGA_TYPE} Online`,
         "publisher": {
           "@id": `${DOMAIN}/#/schema/person/4c3ee266c98401p552c9dc20248825eb`
         },
@@ -129,10 +131,10 @@ export default function Home() {
 
   const head = () => (
     <Head>
-      <title>{`${MANGA_NAME} Manga HD Quality`}</title>
+      <title>{`${MANGA_NAME} (JJK) Manga`}</title>
       <meta name="description" content={APP_DESCRIPTION} />
       <link rel="canonical" href={`${DOMAIN}`} />
-      <meta property="og:title" content={`${MANGA_NAME} Manga HD Quality`} />
+      <meta property="og:title" content={`${MANGA_NAME} (JJK) Manga`} />
       <meta property="og:description" content={APP_DESCRIPTION} />
       <meta property="og:type" content="webiste" />
       <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
@@ -141,12 +143,7 @@ export default function Home() {
       <meta property="og:image" content={`${COVER_IMG}`} />
       <meta property="og:image:secure_url" content={`${COVER_IMG}`} />
       <meta property="og:image:type" content="image/jpg" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`${MANGA_NAME} ${MANGA_TYPE} Online`} />
-      <meta name="twitter:description" content={HEADER_MANGA_DESC} />
-
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <meta name="keywords" content="jujutsu kaisen, jujutsu kaisen manga, jujutsu kaisen manhwa, read jujutsu kaisen, jujutsu kaisen anime, jujutsu kaisen read, baca komik jujutsu kaisen, baca jujutsu kaisen, jujutsu kaisen online, sololeveling, jujutsu kaisen 1, jujutsu kaisen chapter 1, jujutsu kaisen webtoon, manga like jujutsu kaisen, jujutsu kaisen comic, jujutsu kaisen1, solo max leveling, jujutsu kaisen 147, jujutsu kaisen 169, jujutsu kaisen light novel, jujutsu kaisen manga online, jujutsu kaisen read online, jujutsu kaisen 149"></meta>
     </Head >
   );
 
@@ -161,17 +158,17 @@ export default function Home() {
       <Navbar />
       <article>
 
-
+        <AdSense />
 
 
         <div className='max-w-[1200px] mx-auto md:flex rounded-md md:gap-[80px] bg-[black] mt-8 border border-[#373737] text-[white]'>
 
           <div className='md:w-[400px] md:pt-0 pt-6'>
-            <img className='   md:mx-0 mx-auto' src={`${DOMAIN}/cover1.webp`} alt="jujutsu kaisen Cover" />
+            <img className='   md:mx-0 mx-auto' src={`${DOMAIN}/cover1.webp`} alt="jujutsu kaisen JJK Cover" />
           </div>
 
           <div className='md:w-[700px] md:pr-5 md:p-0 p-4'>
-            <h1 className=" tracking-wider text-center font-bold text-2xl pt-6 pb-5">{`${MANGA_NAME}`}</h1>
+            <h1 className=" tracking-wider text-center font-bold text-2xl pt-6 pb-5">{`${MANGA_NAME} (JJK)`}</h1>
             <p className=" my-4 leading-[2] text-[15px] px-2 text-center" dangerouslySetInnerHTML={{ __html: MANGA_DESCRIPTION }}></p>
 
             <div className="flex justify-center items-center  pb-8 md:gap-16 gap-6 flex-wrap mt-14">
@@ -182,7 +179,7 @@ export default function Home() {
 
               <div className="text-center">
                 <p className=" font-bold sm:text-[18px] text-[14px] mb-2">Type</p>
-                <p className="sm:text-[16px] text-[13px]">Manhwa</p>
+                <p className="sm:text-[16px] text-[13px]">Manga</p>
               </div>
 
               <div className="text-center">
@@ -206,7 +203,7 @@ export default function Home() {
 
 
         <h2 id="readmanga" className="font-extrabold text-3xl my-10 px-4 text-center">
-          <Link href={DOMAIN} className="hover:underline text-[white]">{`${MANGA_NAME} Manga Chapters`}</Link>
+          <Link href={DOMAIN} className="hover:underline text-[white]">{`${MANGA_NAME} (JJK) Chapters`}</Link>
         </h2>
 
 
@@ -232,7 +229,7 @@ export default function Home() {
 
 
 
-
+        <AdSense />
 
 
 
@@ -240,18 +237,18 @@ export default function Home() {
         <div className="bg-[black] relative">
           <div className="absolute inset-0 bg-black opacity-80"></div> {/* Dark overlay */}
           <div className="pt-10 pb-10 max-w-[1100px] mx-auto px-5 text-[white] relative z-10">
-            <h2 className="text-center font-extrabold text-3xl">{`More About ${MANGA_NAME} Manga`}</h2>
+            <h2 className="text-center font-extrabold text-3xl">{`More About ${MANGA_NAME} (JJK) Manga`}</h2>
             {MANGA_SUMMARY.map(paragraph => (
               <p className="py-7 leading-[2]" key={paragraph.id}>{paragraph.content}</p>
             ))}
           </div>
         </div>
 
-
+        <AdSense />
 
 
         <div className="text-white my-5">
-          <h2 className="text-3xl text-center my-5">{`${MANGA_NAME} Latest Chapters`}</h2>
+          <h2 className="text-3xl text-center my-5">{`${MANGA_NAME} (JJK) Latest Chapters`}</h2>
           {last5chapters?.map((chapter, index) => (
             <div key={index} className="text-center p-1.5 hover:underline"><a href={`${DOMAIN}/chapter-${chapter.chapterNumber}`}>{`${MANGA_NAME} Chapter ${chapter.chapterNumber}`}</a></div>
           ))}

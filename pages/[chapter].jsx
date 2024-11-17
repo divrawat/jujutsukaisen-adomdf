@@ -10,6 +10,9 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaRedditAlien } from "react-icons/fa";
+import dynamic from 'next/dynamic';
+import React from 'react';
+const AdSense = dynamic(() => import('@/components/Adsense'), { ssr: false });
 export const runtime = 'experimental-edge';
 
 export default function Chapter({ chapterNumber, imageUrls, totalChapters, params, errorcode }) {
@@ -33,7 +36,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
     const nextChapter = chapterIndex < totalChapters - 1 ? chaptersData[chapterIndex + 1].chapterNumber : null;
 
 
-    const DESCRIPTION = `Read ${MANGA_NAME} chapter ${chapterNumber} online at ${DOMAIN_NAME}. All ${MANGA_NAME} latest manga and manhwa chapters in high quality english are always updated regularly at our website.`;
+    const DESCRIPTION = `Read ${MANGA_NAME} (jjk) chapter ${chapterNumber}. Yuji Itadori, a high school student with extraordinary physical abilities. He becomes involved in the world of jujutsu sorcerers after consuming the finger of a powerful cursed spirit. Yuji must now navigate the dangerous world of cursed spirits and jujutsu sorcerers, learning to control his newfound powers while protecting those he cares about.`;
     const URL = params.chapter;
 
 
@@ -45,7 +48,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             "@type": "WebPage",
             "@id": `${DOMAIN}/${URL}`
         },
-        "headline": `${MANGA_NAME} Chapter ${chapterNumber}`,
+        "headline": `${MANGA_NAME} (JJK) Chapter ${chapterNumber}`,
         "description": `${DESCRIPTION}`,
         "image": `${IMAGES_SUBDOMAIN}/chapter-${chapterNumber}/1.webp`,
         "author": {
@@ -77,7 +80,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     "name": "Divyanshu Rawat",
                     "@id": `${DOMAIN}/#/schema/person/7edc4ad8bsc84d70b9422d149194021b`,
                 },
-                "headline": `${MANGA_NAME} Chapter ${chapterNumber}`,
+                "headline": `${MANGA_NAME} (JJK) Chapter ${chapterNumber}`,
                 "mainEntityOfPage": {
                     "@id": `${DOMAIN}/${URL}`
                 },
@@ -117,7 +120,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     "@id": `${DOMAIN}/${URL}/#primaryimage`
                 },
                 "thumbnailUrl": `${IMAGES_SUBDOMAIN}/chapter-${chapterNumber}/1.webp`,
-                "description": `Read ${MANGA_NAME} manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
+                "description": `Read ${MANGA_NAME} (JJK) manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
                 "breadcrumb": {
                     "@id": `${DOMAIN}/${URL}/#breadcrumb`
                 },
@@ -151,7 +154,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": `${MANGA_NAME} Chapter ${chapterNumber}`,
+                        "name": `${MANGA_NAME} (JJK) Chapter ${chapterNumber}`,
                     }
                 ]
             },
@@ -160,7 +163,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                 "@id": `${DOMAIN}/#website`,
                 "url": `${DOMAIN}`,
                 "name": "My Manga Blog",
-                "description": `Read ${MANGA_NAME} manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
+                "description": `Read ${MANGA_NAME} (JJK) manga Online at ${DOMAIN_NAME} which is the best website for reading manga online in very high quality.`,
                 "publisher": {
                     "@id": `${DOMAIN}/#organization`
                 },
@@ -220,10 +223,10 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
 
     const head = () => (
         <Head>
-            <title>{`${MANGA_NAME} Chapter ${chapterNumber}`}</title>
+            <title>{`${MANGA_NAME} (JJK) Chapter ${chapterNumber}`}</title>
             <meta name="description" content={DESCRIPTION} />
             <link rel="canonical" href={`${DOMAIN}/${URL}`} />
-            <meta property="og:title" content={`${MANGA_NAME} Chapter ${chapterNumber}`} />
+            <meta property="og:title" content={`${MANGA_NAME} (JJK) Chapter ${chapterNumber}`} />
             <meta property="og:description" content={DESCRIPTION} />
             <meta property="og:type" content="webiste" />
             <meta name="robots" content="follow, index, noarchive, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
@@ -232,7 +235,7 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             <meta property="og:image" content={`${IMAGES_SUBDOMAIN}/chapter-${chapterNumber}/1.webp`} />
             <meta property="og:image:secure_url" content={`${IMAGES_SUBDOMAIN}/chapter-${chapterNumber}/1.webp`} />
             <meta property="og:image:type" content="image/webp" />
-            {/* <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /> */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         </Head >
     );
 
@@ -242,12 +245,15 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
             {head()}
             <Navbar />
             <article>
-                <h1 className="text-3xl font-bold text-center text-[white] px-5 pt-5 md:my-5">{`${MANGA_NAME} Chapter ${chapterNumber}`}</h1>
+
+                <AdSense />
+
+                <h1 className="text-3xl font-bold text-center text-[white] px-5 pt-5 md:my-5">{`${MANGA_NAME} (JJK) Chapter ${chapterNumber}`}</h1>
 
                 <div className='flex justify-center px-5 text-[#85e1e6] text-[13px] mb-5'>
                     <div><a href={DOMAIN}>Home</a></div>
                     <div className='px-2'>{` -> `}</div>
-                    <div><a href={`${DOMAIN}/chapter-${chapterNumber}`}>{`${MANGA_NAME} Chapter ${chapterNumber}`}</a></div>
+                    <div><a href={`${DOMAIN}/chapter-${chapterNumber}`}>{`${MANGA_NAME} (JJK) Chapter ${chapterNumber}`}</a></div>
                 </div>
 
 
@@ -312,22 +318,43 @@ export default function Chapter({ chapterNumber, imageUrls, totalChapters, param
                     </div>
                 </div>
 
-                <div className='max-w-[1200px] mx-auto mb-5'>
+
+                {/* <div className='max-w-[1200px] mx-auto mb-5'>
                     {imageUrls.map((imageUrl, index) => (
                         <div className='allimages' key={index}>
                             <img width={700} height={600} loading="lazy" src={imageUrl} alt={`Chapter ${chapterNumber} Image ${index + 1}`} />
                         </div>
                     ))}
+                </div> */}
+
+                <div className="max-w-[1200px] mx-auto mb-5">
+                    {imageUrls.map((imageUrl, index) => (
+                        <React.Fragment key={index}>
+                            <div className="allimages">
+                                <img
+                                    loading="lazy"
+                                    src={imageUrl}
+                                    alt={`Chapter ${chapterNumber} Image ${index + 1}`}
+                                />
+                            </div>
+                            {(index === 1 || index === 4 || index === 7) && (
+                                <div className='p-3'>
+                                    <AdSense key={`ad-${index}`} />
+                                </div>
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
 
-                {/* <div className='py-10 bg-[#0f0511]'>
-                    <h2 className='text-4xl text-center text-[white] font-blod px-4 mb-10'>Comment Section</h2>
-                    <section className='max-w-[1000px] mx-auto px-5'>
-                        <DisqusComments url={`/manga/${URL}`} identifier={chapterNumber} title={`${MANGA_NAME} Chapter ${chapterNumber}`} />
-                    </section>
-                </div> */}
+
+
+                <AdSense />
+
+
+
+
                 <div className="text-white my-5">
-                    <h2 className="text-3xl text-center my-5">{`${MANGA_NAME} Latest Chapters`}</h2>
+                    <h2 className="text-3xl text-center my-5">{`${MANGA_NAME} (JJK) Latest Chapters`}</h2>
                     {last5chapters?.map((chapter, index) => (
                         <div key={index} className="text-center p-1.5 hover:underline"><a href={`${DOMAIN}/chapter-${chapter.chapterNumber}`}>{`${MANGA_NAME} Chapter ${chapter.chapterNumber}`}</a></div>
                     ))}
