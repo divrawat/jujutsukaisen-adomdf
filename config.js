@@ -8,7 +8,7 @@ export const IMAGES_SUBDOMAIN_LOGO = 'https://images.mangachimp.com';
 
 // export const MANGA_DESCRIPTION0 = `<a href="${DOMAIN}"><u>Vinland Saga</u></a>`;
 
-export const MANGA_DESCRIPTION = `<a href="${DOMAIN}"><u><b>Jujutsu Kaisen manga</u></b></a> series that follows Yuji Itadori, a high school student with extraordinary physical abilities. He becomes involved in the world of jujutsu sorcerers after consuming the finger of a powerful cursed spirit. Yuji must now navigate the dangerous world of cursed spirits and jujutsu sorcerers, learning to control his newfound powers while protecting those he cares about.`;
+export const MANGA_DESCRIPTION = `<a href="${DOMAIN}"><u><b>Jujutsu Kaisen (JJK) manga</u></b></a> series that follows Yuji Itadori, a high school student with extraordinary physical abilities. He becomes involved in the world of jujutsu sorcerers after consuming the finger of a powerful cursed spirit. Yuji must now navigate the dangerous world of cursed spirits and jujutsu sorcerers, learning to control his newfound powers while protecting those he cares about.`;
 
 
 
