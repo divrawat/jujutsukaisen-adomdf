@@ -158,7 +158,7 @@ export default function Home() {
       <Navbar />
       <article>
 
-        <AdSense />
+        {/* <AdSense /> */}
 
 
         <div className='max-w-[1200px] mx-auto md:flex rounded-md md:gap-[80px] bg-[black] mt-8 border border-[#373737] text-[white]'>
@@ -229,7 +229,7 @@ export default function Home() {
 
 
 
-        <AdSense />
+        {/* <AdSense /> */}
 
 
 
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
         </div>
 
-        <AdSense />
+        {/* <AdSense /> */}
 
 
         <div className="text-white my-5">
